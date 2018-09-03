@@ -7,9 +7,12 @@ InputMatrix inpMat = InputMatrix();
 void setup() {
     // put your setup code here, to run once:
     pinMode(LED, OUTPUT);
+    digitalWrite(LED, HIGH);
 }
 
 void loop() {
     // put your main code here, to run repeatedly:
     inpMat.updateMatrix();
+    Serial.println("\n---END---\n");
+    delay(250);
 }

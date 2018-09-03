@@ -1,9 +1,9 @@
 #include <Arduino.h>
 
 const static byte sizeX = 3;
-const static byte sizeY = 4;
+const static byte sizeY = 3;
 
-const byte RowPins[sizeY] = {6,7,8,9};
+const byte RowPins[sizeY] = {6,7,8};
 const byte ColPins[sizeX] = {16,17,18};
 
 class InputMatrix{
@@ -33,9 +33,10 @@ public:
                 if(KeyStats[xx][yy] == LOW){
                     Serial.print("Key Detected: ");
                     Serial.print(xx); Serial.print(", ");
-                    Serial.print(yy); Serial.println("");
+                    Serial.print(yy); Serial.println("\n");
                 }
             }
+            digitalWrite(ColPins[xx], HIGH);
         }
     }
 
