@@ -1,8 +1,6 @@
-#include "MultiplexInput.h"
+#include <Arduino.h>
 
 static const unsigned int LED = 13;
-
-InputMatrix inpMat = InputMatrix();
 
 void setup() {
     // put your setup code here, to run once:
@@ -11,5 +9,10 @@ void setup() {
 
 void loop() {
     // put your main code here, to run repeatedly:
-    inpMat.updateMatrix();
+    digitalWrite(LED, HIGH);
+    usbMIDI.sendNoteOn(60, 100, 1);
+    delay(1500);
+    digitalWrite(LED, LOW);
+    usbMIDI.sendNoteOff(60, 100, 1);
+    delay(1500);
 }
