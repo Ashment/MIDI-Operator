@@ -5,3 +5,5 @@
 .vscode/launch.json
 ./lib/cores
 ./lib/MIDIcontroller
+lib/cores/
+lib/MIDIcontroller/
