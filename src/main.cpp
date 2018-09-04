@@ -13,6 +13,6 @@ void setup() {
 void loop() {
     // put your main code here, to run repeatedly:
     inpMat.updateMatrix();
-    Serial.println("\n---END---\n");
-    delay(250);
+    inpMat.GenerateMidiNotes();
+    delay(20);
 }
