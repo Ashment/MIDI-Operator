@@ -1,5 +1,7 @@
 #include <Arduino.h>
 
+const static byte sPotPin = 0;
+
 const static byte sizeX = 3;
 const static byte sizeY = 3;
 
@@ -81,16 +83,12 @@ public:
             for(int yy = 0; yy < sizeY; yy++){
                 KeyState cur = deltaStates[xx][yy];
                 if (cur == KeyState(KeyDown)){
-                    usbMIDI.sendNoteOn(NoteMatrix[xx][yy], 90, 1);
+                    usbMIDI.sendNoteOn(NoteMatrix[xx][yy], 80, 1);
                 }else if(cur == KeyState(KeyUp)){
-                    usbMIDI.sendNoteOff(NoteMatrix[xx][yy], 90, 1);
+                    usbMIDI.sendNoteOff(NoteMatrix[xx][yy], 80, 1);
                 }
             }
         }
     }
-
-
-private:
-    void InitializePins();
 
 };
