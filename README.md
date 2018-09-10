@@ -5,7 +5,7 @@ I'm working on a MIDI controller with features inspired by the Teenage Engineeri
 ### TODO 
 
 **Input**
-  - [ ] Matrix Scanning
+  - [X] Matrix Scanning
   - [ ] Pots
   - [ ] Soft Latch
   
