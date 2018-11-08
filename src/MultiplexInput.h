@@ -40,7 +40,7 @@ public:
     //METHODS
     void updateMatrix(){
         for(int xx = 0; xx < sizeX; xx++){
-            //Iterate through columns, driving current iterating pin low
+            //Iterate through columns, pulling cur iterating pin low
             pinMode(ColPins[xx], OUTPUT);
             digitalWrite(ColPins[xx], LOW);
 
@@ -79,6 +79,7 @@ public:
 
 
     void GenerateMidiNotes(){
+        //Iterates through key statuses and generates MIDI on/off data
         for(int xx = 0; xx < sizeX; xx++){
             for(int yy = 0; yy < sizeY; yy++){
                 KeyState cur = deltaStates[xx][yy];
